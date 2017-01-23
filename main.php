@@ -26,3 +26,13 @@ $command = 'curl -X "POST" "https://syrup.keboola.com/provisioning/manage/server
 $process = new \Symfony\Component\Process\Process($command);
 $process->mustRun();
 print $process->getOutput() . "\n";
+
+$command = 'curl -X "POST" "https://syrup.keboola.com/provisioning/manage/server/docker/garbage-collection?type=rstudio&hours=120" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->mustRun();
+print $process->getOutput() . "\n";
+
+$command = 'curl -X "POST" "https://syrup.keboola.com/provisioning/manage/server/docker/garbage-collection?type=jupyter&hours=120" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->mustRun();
+print $process->getOutput() . "\n";
