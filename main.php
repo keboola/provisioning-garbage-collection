@@ -17,12 +17,12 @@ if (!isset($config["#X-KBC-ManageApiToken"])) {
 }
 $token = $config["#X-KBC-ManageApiToken"];
 
-$command = 'curl -X "POST" "https://syrup.keboola.com/provisioning/manage/server/mysql/garbage-collection?type=sandbox&days=7&dry-run=1" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$command = 'curl -X "POST" "https://syrup.keboola.com/provisioning/manage/server/mysql/garbage-collection?type=sandbox&days=7" -H "X-KBC-ManageApiToken: ' . $token . '"';
 $process = new \Symfony\Component\Process\Process($command);
 $process->mustRun();
 print $process->getOutput() . "\n";
 
-$command = 'curl -X "POST" "https://syrup.keboola.com/provisioning/manage/server/mysql/garbage-collection?type=transformations&days=7&dry-run=1" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$command = 'curl -X "POST" "https://syrup.keboola.com/provisioning/manage/server/mysql/garbage-collection?type=transformations&days=7" -H "X-KBC-ManageApiToken: ' . $token . '"';
 $process = new \Symfony\Component\Process\Process($command);
 $process->mustRun();
 print $process->getOutput() . "\n";
