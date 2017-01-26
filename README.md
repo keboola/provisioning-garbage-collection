@@ -2,7 +2,7 @@
 
 Calls Garbage Collection for Provisioning Management API with these parameters
 
-- `type=sandbox&days=7`
+- `type=sandbox&days=14`
 - `type=transformations&days=7`
 - `type=rstudio&hours=120`
 - `type=jupyter&hours=120`
