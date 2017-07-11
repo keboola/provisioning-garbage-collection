@@ -16,7 +16,7 @@ if (!isset($config["#X-KBC-ManageApiToken"])) {
     exit(1);
 }
 
-$syrupUrl = 'https://syrup.keboola.com/';
+$syrupUrl = 'https://syrup.keboola.com';
 if (isset($config["syrupURL"])) {
     $syrupUrl = $config["syrupURL"];
 }
