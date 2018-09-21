@@ -15,7 +15,16 @@ Configuration requires Storage API Manage Super User token or Application token 
 
 ```
 {
-    "#X-KBC-ManageApiToken": "TOKEN"
+    "#X-KBC-ManageApiToken": "TOKEN",
     "syrupURL": "https://syrup.keboola.com"
 }
+```
+
+## Development
+
+```
+docker build . -t provisioning-garbage-collection
+docker run --rm --volume $(pwd):/code provisioning-garbage-collection composer install
+docker run --rm --volume $(pwd):/code --volume $(pwd)/data:/data provisioning-garbage-collection 
+
 ```
