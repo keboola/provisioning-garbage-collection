@@ -23,13 +23,19 @@ if (isset($config["syrupURL"])) {
 
 $token = $config["#X-KBC-ManageApiToken"];
 
-$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=rstudio&hours=120" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=rstudio" -H "X-KBC-ManageApiToken: ' . $token . '"';
 $process = new \Symfony\Component\Process\Process($command);
 $process->setTimeout(null);
 $process->mustRun();
 print $process->getOutput() . "\n";
 
-$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=jupyter&hours=120" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=jupyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->setTimeout(null);
+$process->mustRun();
+print $process->getOutput() . "\n";
+
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=julipyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
 $process = new \Symfony\Component\Process\Process($command);
 $process->setTimeout(null);
 $process->mustRun();
