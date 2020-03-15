@@ -40,3 +40,9 @@ $process = new \Symfony\Component\Process\Process($command);
 $process->setTimeout(null);
 $process->mustRun();
 print $process->getOutput() . "\n";
+
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/kubernetes/garbage-collection?type=jupyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->setTimeout(null);
+$process->mustRun();
+print $process->getOutput() . "\n";
