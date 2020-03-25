@@ -51,3 +51,9 @@ $process = new \Symfony\Component\Process\Process($command);
 $process->setTimeout(null);
 $process->mustRun();
 print $process->getOutput() . "\n";
+
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=r-jupyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->setTimeout(null);
+$process->mustRun();
+print $process->getOutput() . "\n";
