@@ -7,9 +7,11 @@ Calls Garbage Collection for Provisioning Management API with these parameters
 - `type=rstudio&hours=120`
 - `type=jupyter&hours=120`
 
-## Configuration 
+## Configuration
 
 Configuration requires Storage API Manage Super User token or Application token with `provisioning:write` scope.
+
+Parameter `kubernetes` with non-empty value runs garbage collection on kubernetes backend instead of docker.
 
 ### Example
 
@@ -25,6 +27,6 @@ Configuration requires Storage API Manage Super User token or Application token 
 ```
 docker build . -t provisioning-garbage-collection
 docker run --rm --volume $(pwd):/code provisioning-garbage-collection composer install
-docker run --rm --volume $(pwd):/code --volume $(pwd)/data:/data provisioning-garbage-collection 
+docker run --rm --volume $(pwd):/code --volume $(pwd)/data:/data provisioning-garbage-collection
 
 ```
