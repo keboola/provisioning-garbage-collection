@@ -31,22 +31,23 @@ if ($isK8sBackend) {
     $process->setTimeout(null);
     $process->mustRun();
     print $process->getOutput() . "\n";
-} else {
-    $command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=rstudio" -H "X-KBC-ManageApiToken: ' . $token . '"';
-    $process = new \Symfony\Component\Process\Process($command);
-    $process->setTimeout(null);
-    $process->mustRun();
-    print $process->getOutput() . "\n";
-
-    $command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=jupyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
-    $process = new \Symfony\Component\Process\Process($command);
-    $process->setTimeout(null);
-    $process->mustRun();
-    print $process->getOutput() . "\n";
-
-    $command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=julipyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
-    $process = new \Symfony\Component\Process\Process($command);
-    $process->setTimeout(null);
-    $process->mustRun();
-    print $process->getOutput() . "\n";
+    exit();
 }
+
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=rstudio" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->setTimeout(null);
+$process->mustRun();
+print $process->getOutput() . "\n";
+
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=jupyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->setTimeout(null);
+$process->mustRun();
+print $process->getOutput() . "\n";
+
+$command = 'curl -X "POST" "' . $syrupUrl . '/provisioning/manage/server/docker/garbage-collection?type=julipyter" -H "X-KBC-ManageApiToken: ' . $token . '"';
+$process = new \Symfony\Component\Process\Process($command);
+$process->setTimeout(null);
+$process->mustRun();
+print $process->getOutput() . "\n";
