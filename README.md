@@ -30,3 +30,7 @@ docker run --rm --volume $(pwd):/code provisioning-garbage-collection composer i
 docker run --rm --volume $(pwd):/code --volume $(pwd)/data:/data provisioning-garbage-collection
 
 ```
+
+## License
+
+MIT licensed, see [LICENSE](./LICENSE) file.
