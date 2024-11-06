@@ -8,7 +8,7 @@
   ],
   "license": "MIT",
   "require": {
-    "symfony/process": "~3.0"
+    "symfony/process": "~5.4"
   },
   "autoload": {
     "psr-0": {
